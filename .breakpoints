@@ -1,0 +1,38 @@
+{
+  "files": {
+    "Main.java": [
+      {
+        "id": "b92c0629-a4f7-45b2-bb02-a788006c37de",
+        "line": 240,
+        "version": 4577,
+        "index": 7622
+      },
+      {
+        "id": "a517df86-f785-4c76-9ff1-0abb6a3fc4bd",
+        "line": 424,
+        "version": 4577,
+        "index": 11814
+      },
+      {
+        "id": "cfa791ef-8ccf-455a-8fab-ae2771276a23",
+        "line": 456,
+        "version": 4577,
+        "index": 12405
+      },
+      {
+        "id": "181904a5-51de-4892-bb95-2de062510a23",
+        "line": 521,
+        "version": 4577,
+        "index": 14274
+      }
+    ],
+    "longeststreak.java": [
+      {
+        "id": "fa5f4f43-db2a-47d7-93f8-d5f0e266b79b",
+        "line": 1,
+        "version": 3,
+        "index": 0
+      }
+    ]
+  }
+}

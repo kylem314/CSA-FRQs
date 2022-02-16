@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.lang.Math;
+import java.util.ArrayList;
 
 class Main {
   
@@ -7,7 +8,7 @@ class Main {
 
     // Take user input for menu
     Scanner sc = new Scanner(System.in);
-    System.out.println("\n\n==================== \nMenu \n==================== \n1.  FRQ 2\n2.  FRQ 3 Question 1\n3.  FRQ 3 Question 2\n4.  FRQ 4 Question 1 \n5.  FRQ 4 Question 2 \n6.  FRQ 5 Question 1\n7.  FRQ 5 Question 2 \n8.  FRQ 6 Question 1 \n9.  FRQ 6 Question 2\n====================");
+    System.out.println("\n\n==================== \nMenu \n==================== \n1.  FRQ 2 Question 1\n2.  FRQ 3 Question 1\n3.  FRQ 3 Question 2\n4.  FRQ 4 Question 1 \n5.  FRQ 4 Question 2 \n6.  FRQ 5 Question 1\n7.  FRQ 5 Question 2 \n8.  FRQ 6 Question 1 \n9.  FRQ 6 Question 2\n10. FRQ 7 Question 1\n11. FRQ 8 Question 1\n12. FRQ 9 Question 1\n13. FRQ 9 Question 2\n14. FRQ 10 Question 1\n15. CSA Quiz 1 \n====================");
     System.out.println("Enter menu option");  
     int option = sc.nextInt();
     System.out.println("");
@@ -90,12 +91,8 @@ class Main {
       System.out.println(longstreak.longestStreak(word));
       
     }else if(option == 5){
-        //coinGame.playGame();
-        /*
-        Scanner input = new Scanner(System.in);
-        int p1input = input.nextInt();
-        int p2input = input.nextInt();
-        */
+
+        coinGame.playGame();
     
     }else if(option == 6){
 
@@ -157,6 +154,90 @@ class Main {
       pr.computeWages(fixed_wage, per_item);
       System.out.println("Employee wages:");
       pr.printwages();
+
+    }else if(option == 10){
+      System.out.println("Enter First name");
+      Scanner sc10 = new Scanner(System.in);
+      String first = sc10.nextLine();
+      System.out.println("Enter Last name");
+      String last = sc10.nextLine();
+      UserName users = new UserName(first, last);
+
+    }else if(option == 11){
+        Plot[][] plotArr = new Plot[4][3];
+        String[] cropType = {"corn", "corn", "peas", "peas", "corn", "corn", "wheat", "corn", "rice", "corn", "corn", "peas"};
+        int[] cropYield = {20, 30, 10, 30, 40, 62, 10, 50, 30, 55, 30, 30};
+
+        int k = 0;
+        for (int i = 0; i < plotArr.length; i++) {
+            for (int j = 0; j < plotArr[0].length; j++) {
+                plotArr[i][j] = new Plot(cropType[k], cropYield[k]);
+                k++;
+            }
+        }
+
+        ExperimentalFarm f = new ExperimentalFarm(plotArr);
+        if (f.getHighestYield("corn") != null) {
+            System.out.println(f.getHighestYield("corn").getCropYield());
+        } else {
+            System.out.println("null");
+        }
+
+        if (f.getHighestYield("peas") != null) {
+            System.out.println(f.getHighestYield("peas").getCropYield());
+        } else {
+            System.out.println("null");
+        }
+
+        if (f.getHighestYield("bananas") != null) {
+            System.out.println(f.getHighestYield("bananas").getCropYield());
+        } else {
+            System.out.println("null");
+        }
+    
+    }else if(option == 12){
+
+      // Creating a picture book and returning information
+      PictureBook pictures = new PictureBook("PictureBook", "Author Name", "Illustrator Name");
+      pictures.printBookInfo();   
+      System.out.println();
+  
+      // ArrayList for listing of books
+      ArrayList<Book> myLibrary = new ArrayList<Book>();
+
+      Book Book1 = new Book("A Nice Book", "Nice Author");
+      PictureBook Book2 = new PictureBook("A Nice Picture Book", "Nicer Author", "Nicer Illustrator");
+
+      myLibrary.add(Book1);
+      myLibrary.add(Book2);
+ 
+      BookListing Listing1 = new BookListing(Book1, 10);
+      Listing1.printDescription(); 
+      System.out.println(); 
+  
+      BookListing Listing2 = new BookListing(Book2, 20);
+      Listing2.printDescription();
+
+    }else if(option == 13){
+
+      Animal carnivore = new Animal("carnivore", "lion", "animal 1");
+      System.out.println(carnivore);
+      
+      Herbivore herbivore = new Herbivore("giraffe", "animal 2");
+      System.out.println(herbivore);
+    
+      Elephant elephant = new Elephant("animal 3", 2.0);
+      System.out.println(elephant);
+
+    }else if(option == 14){
+      NumberSystem.reduceFraction(50,5);
+      NumberSystem.reduceFraction(4,16);
+      NumberSystem.reduceFraction(33,9);
+      NumberSystem.reduceFraction(12,7);
+
+    }else if(option == 15){
+
+      Number();
 
     }else{
       System.out.println("Invalid option");

@@ -2,19 +2,19 @@
 
 public class coinGame{
 
-  private int startingCoins;
-  private int maxRounds;
+  private static int startingCoins;
+  private static int maxRounds;
 
   public coinGame(int s, int r){
     startingCoins = s;
     maxRounds = r;
   }
 
-  public int getPlayer1Move(){
+  public static int getPlayer1Move(){
     return (int)(Math.random() * 3) + 1;
   }
 
-  public int getPlayer2Move(int round){
+  public static int getPlayer2Move(int round){
     int spent = 0;
 
     if(round%3 == 0){
@@ -31,7 +31,7 @@ public class coinGame{
   }
 
 
-  public void playGame(){
+  public static void playGame(){
 
     int player1coins = startingCoins;
     int player2coins = startingCoins;
@@ -58,10 +58,10 @@ public class coinGame{
     }
 
   if(player1coins == player2coins){
-    System.out.println("tie game");
+    System.out.println("Tie game");
   }else if(player1coins > player2coins){
-    System.out.println("player 1 wins");
+    System.out.println("Player 1 wins");
   }else{
-    System.out.println("player 2 wins");
+    System.out.println("Player 2 wins");
   }
 }}

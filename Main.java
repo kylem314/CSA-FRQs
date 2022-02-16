@@ -154,7 +154,7 @@ class Main {
       pr.computeWages(fixed_wage, per_item);
       System.out.println("Employee wages:");
       pr.printwages();
-
+      /*
     }else if(option == 10){
       System.out.println("Enter First name");
       Scanner sc10 = new Scanner(System.in);
@@ -162,7 +162,7 @@ class Main {
       System.out.println("Enter Last name");
       String last = sc10.nextLine();
       UserName users = new UserName(first, last);
-
+      */
     }else if(option == 11){
         Plot[][] plotArr = new Plot[4][3];
         String[] cropType = {"corn", "corn", "peas", "peas", "corn", "corn", "wheat", "corn", "rice", "corn", "corn", "peas"};
@@ -237,7 +237,31 @@ class Main {
 
     }else if(option == 15){
 
-      Number();
+        // Create an ArrayList of Type Number, the ArrayList is called squirrels
+      ArrayList<Number> squirrels = new ArrayList<>();
+
+        // Initialize 10 squirrels of class type Number
+
+      for(int i = 0; i < 10; i++){
+        Number sqrl = new Number();
+        // Insert Number instance into ArrayList Squirrel in least to greatest order by random number, mine required nested loops
+            for(int n = 0; n < 10; n++){
+              // Add the squirrel to the array list if it's empty
+                if(squirrels.size() == 0){
+                  squirrels.add(sqrl);
+                  break;
+              // Go through the list and check if we're at the end of if we should insert the squirrel (fewer squirrels than the next object)
+                }else if(n == squirrels.size() || sqrl.squirrelCount() < squirrels.get(n).squirrelCount()){
+                    squirrels.add(n, sqrl);
+                    break;
+                }
+            }
+        }
+        // Print a formatted message with number of Squirrels and Index by which they were created, use enhanced for loop
+        // For every squirrel in the array list, print our formatted message
+        for (Number squirrel : squirrels) {
+            System.out.println("Squirrel count: " + squirrel.squirrelCount() + " Day: " + squirrel.Index());
+        }
 
     }else{
       System.out.println("Invalid option");
